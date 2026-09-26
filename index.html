@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CA Bet - Investment Platform</title>
+<title>CA BET</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
@@ -18,112 +18,48 @@ body{
   color:#fff;
 }
 
+/* HEADER */
 header{
-  background:#0e131d;
-  padding:18px 6%;
+  height:70px;
+  background:#101620;
+  border-bottom:1px solid #252e3c;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #242b38;
+  justify-content:space-between;
+  padding:0 5%;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:bold;
-  color:#e0b84c;
+  font-size:30px;
+  font-weight:900;
+  color:#19d3c5;
+  letter-spacing:1px;
+}
+
+nav{
+  display:flex;
+  gap:25px;
 }
 
 nav a{
   color:#ddd;
   text-decoration:none;
-  margin-left:20px;
+  font-size:14px;
 }
 
 nav a:hover{
-  color:#e0b84c;
+  color:#19d3c5;
 }
 
-.hero{
-  text-align:center;
-  padding:90px 20px;
-  background:
-  radial-gradient(circle at center,#25200d 0,#080b12 55%);
-}
-
-.hero h1{
-  font-size:48px;
-  color:#e0b84c;
-  margin-bottom:15px;
-}
-
-.hero p{
-  color:#bbb;
-  font-size:18px;
-  max-width:650px;
-  margin:auto;
-  line-height:1.6;
+.auth{
+  display:flex;
+  gap:10px;
 }
 
 .btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:13px 25px;
-  background:#d4a936;
-  color:#111;
-  border:none;
-  border-radius:7px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-}
-
-.section{
-  padding:60px 6%;
-}
-
-.section h2{
-  text-align:center;
-  color:#e0b84c;
-  margin-bottom:35px;
-  font-size:32px;
-}
-
-.plans{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:18px;
-}
-
-.card{
-  background:#111722;
-  border:1px solid #272f3c;
-  border-radius:12px;
-  padding:25px;
-  text-align:center;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:#d4a936;
-}
-
-.card h3{
-  color:#e0b84c;
-  margin-bottom:15px;
-}
-
-.amount{
-  font-size:25px;
-  font-weight:bold;
-  margin:15px 0;
-}
-
-.card button{
-  background:#d4a936;
   border:0;
   padding:11px 20px;
   border-radius:6px;
@@ -131,104 +67,299 @@ nav a:hover{
   font-weight:bold;
 }
 
-.features{
+.login{
+  background:#1c2633;
+  color:white;
+}
+
+.register{
+  background:#19d3c5;
+  color:#061012;
+}
+
+/* HERO */
+.hero{
+  min-height:380px;
+  display:flex;
+  align-items:center;
+  padding:60px 6%;
+  background:
+  linear-gradient(90deg,#080b12 10%,rgba(8,11,18,.65),#080b12),
+  radial-gradient(circle at 75% 45%,#123b40,#080b12 55%);
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero h1 span{
+  color:#19d3c5;
+}
+
+.hero p{
+  color:#aab2bd;
+  line-height:1.7;
+  font-size:17px;
+}
+
+.hero-button{
+  margin-top:25px;
+  background:#19d3c5;
+  padding:14px 28px;
+  border:0;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CATEGORY */
+.categories{
+  padding:20px 5%;
+  background:#0e141d;
+  display:flex;
+  gap:12px;
+  overflow:auto;
+}
+
+.category{
+  white-space:nowrap;
+  padding:12px 22px;
+  background:#171f2a;
+  border-radius:20px;
+  color:#bbb;
+  cursor:pointer;
+}
+
+.category.active,
+.category:hover{
+  background:#19d3c5;
+  color:#071012;
+}
+
+/* SECTION */
+.section{
+  padding:45px 5%;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.section-title h2{
+  font-size:25px;
+}
+
+.section-title a{
+  color:#19d3c5;
+  text-decoration:none;
+}
+
+/* GAMES */
+.games{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
 }
 
-.feature{
-  background:#111722;
-  padding:25px;
+.game{
+  background:#111923;
+  border:1px solid #222d3a;
   border-radius:10px;
-  border:1px solid #272f3c;
+  overflow:hidden;
+  transition:.25s;
 }
 
-.feature h3{
-  color:#e0b84c;
+.game:hover{
+  transform:translateY(-5px);
+  border-color:#19d3c5;
+}
+
+.game-img{
+  height:130px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  background:linear-gradient(135deg,#152d35,#17131f);
+}
+
+.game-info{
+  padding:15px;
+}
+
+.game-info h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.game-info p{
+  color:#8893a0;
+  font-size:12px;
+}
+
+.play{
+  width:100%;
+  margin-top:12px;
+  padding:10px;
+  border:0;
+  border-radius:5px;
+  background:#19d3c5;
+  color:#071012;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* BANNER */
+.promo{
+  margin:10px 5% 40px;
+  padding:35px;
+  border-radius:12px;
+  background:linear-gradient(100deg,#123d40,#17212e);
+  border:1px solid #24545a;
+}
+
+.promo h2{
+  color:#19d3c5;
   margin-bottom:10px;
 }
 
-.login-box{
-  max-width:450px;
-  margin:auto;
-  background:#111722;
+.promo p{
+  color:#b6bec8;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+
+.modal-box{
+  width:90%;
+  max-width:400px;
+  background:#111923;
   padding:30px;
   border-radius:12px;
+  border:1px solid #293543;
 }
 
-.login-box input{
+.modal-box h2{
+  color:#19d3c5;
+  margin-bottom:20px;
+}
+
+.modal-box input{
   width:100%;
   padding:13px;
-  margin:8px 0;
-  background:#080b12;
-  color:white;
-  border:1px solid #303846;
+  margin:7px 0;
   border-radius:6px;
+  border:1px solid #303b49;
+  background:#080d14;
+  color:#fff;
 }
 
-.login-box button{
+.modal-box button{
   width:100%;
-  padding:13px;
   margin-top:12px;
-  background:#d4a936;
+  padding:13px;
+  background:#19d3c5;
   border:0;
   border-radius:6px;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.dashboard{
+.close{
+  float:right;
+  color:#aaa;
+  cursor:pointer;
+  font-size:22px;
+}
+
+/* FOOTER */
+footer{
+  background:#0d131b;
+  padding:40px 5%;
+  margin-top:40px;
+  border-top:1px solid #222b36;
+}
+
+.footer-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  gap:30px;
 }
 
-.stat{
-  background:#111722;
-  border:1px solid #272f3c;
-  padding:25px;
-  border-radius:10px;
+footer h3{
+  color:#19d3c5;
+  margin-bottom:15px;
 }
 
-.stat span{
-  color:#aaa;
-  display:block;
-  margin-bottom:10px;
+footer p,
+footer a{
+  color:#7f8996;
+  font-size:14px;
+  line-height:2;
+  text-decoration:none;
 }
 
-.stat strong{
-  font-size:25px;
-  color:#e0b84c;
-}
-
-.notice{
-  background:#17130a;
-  border:1px solid #705b22;
-  padding:20px;
-  border-radius:8px;
-  color:#ddd;
+.disclaimer{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid #222b36;
+  color:#68727f;
+  font-size:12px;
   line-height:1.6;
 }
 
-footer{
-  background:#0e131d;
-  text-align:center;
-  padding:30px;
-  color:#888;
-  margin-top:40px;
-}
-
+/* MOBILE */
 @media(max-width:700px){
+
+  header{
+    padding:0 4%;
+  }
+
   nav{
     display:none;
   }
 
+  .hero{
+    min-height:330px;
+    padding:45px 5%;
+  }
+
   .hero h1{
-    font-size:36px;
+    font-size:38px;
+  }
+
+  .games{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .game-img{
+    height:105px;
+  }
+
+  .auth .btn{
+    padding:9px 12px;
+    font-size:12px;
   }
 
   .section{
-    padding:45px 5%;
+    padding:35px 4%;
   }
 }
 </style>
@@ -237,190 +368,553 @@ footer{
 <body>
 
 <header>
+
   <div class="logo">CA BET</div>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#plans">Plans</a>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#login">Login</a>
+    <a href="#casino">Casino</a>
+    <a href="#live">Live</a>
+    <a href="#slots">Slots</a>
+    <a href="#promotions">Promotions</a>
   </nav>
+
+  <div class="auth">
+    <button class="btn login" onclick="openModal('login')">Login</button>
+    <button class="btn register" onclick="openModal('register')">Register</button>
+  </div>
+
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
-  <h1>CA BET</h1>
+  <div class="hero-content">
 
-  <p>
-    A modern investment platform interface designed for
-    portfolio management and investment information.
-  </p>
+    <h1>WELCOME TO <span>CA BET</span></h1>
 
-  <a href="#plans" class="btn">View Plans</a>
+    <p>
+      Explore a modern casino-style gaming interface,
+      featuring slots, live games and entertainment categories.
+    </p>
 
-</section>
+    <button class="hero-button" onclick="scrollToGames()">
+      EXPLORE GAMES
+    </button>
 
-
-<section class="section" id="plans">
-
-<h2>Investment Plans</h2>
-
-<div class="plans">
-
-<div class="card"><h3>Starter</h3><div class="amount">৳300</div><button>Select</button></div>
-
-<div class="card"><h3>Basic</h3><div class="amount">৳500</div><button>Select</button></div>
-
-<div class="card"><h3>Bronze</h3><div class="amount">৳1,000</div><button>Select</button></div>
-
-<div class="card"><h3>Silver</h3><div class="amount">৳1,500</div><button>Select</button></div>
-
-<div class="card"><h3>Plus</h3><div class="amount">৳2,000</div><button>Select</button></div>
-
-<div class="card"><h3>Growth</h3><div class="amount">৳3,000</div><button>Select</button></div>
-
-<div class="card"><h3>Smart</h3><div class="amount">৳4,000</div><button>Select</button></div>
-
-<div class="card"><h3>Pro</h3><div class="amount">৳5,000</div><button>Select</button></div>
-
-<div class="card"><h3>Advanced</h3><div class="amount">৳6,500</div><button>Select</button></div>
-
-<div class="card"><h3>Premium</h3><div class="amount">৳8,000</div><button>Select</button></div>
-
-<div class="card"><h3>Elite</h3><div class="amount">৳10,000</div><button>Select</button></div>
-
-<div class="card"><h3>Gold</h3><div class="amount">৳12,500</div><button>Select</button></div>
-
-<div class="card"><h3>Platinum</h3><div class="amount">৳15,000</div><button>Select</button></div>
-
-<div class="card"><h3>Business</h3><div class="amount">৳17,500</div><button>Select</button></div>
-
-<div class="card"><h3>Professional</h3><div class="amount">৳20,000</div><button>Select</button></div>
-
-<div class="card"><h3>Executive</h3><div class="amount">৳22,500</div><button>Select</button></div>
-
-<div class="card"><h3>Diamond</h3><div class="amount">৳25,000</div><button>Select</button></div>
-
-<div class="card"><h3>VIP</h3><div class="amount">৳27,000</div><button>Select</button></div>
-
-<div class="card"><h3>Royal</h3><div class="amount">৳28,500</div><button>Select</button></div>
-
-<div class="card"><h3>Ultimate</h3><div class="amount">৳30,000</div><button>Select</button></div>
-
-</div>
-</section>
-
-
-<section class="section">
-
-<h2>Why CA BET?</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>Secure Account</h3>
-<p>User account security and authentication.</p>
-</div>
-
-<div class="feature">
-<h3>Portfolio</h3>
-<p>View your investment information in one place.</p>
-</div>
-
-<div class="feature">
-<h3>Transaction History</h3>
-<p>Keep track of account transactions.</p>
-</div>
-
-<div class="feature">
-<h3>Mobile Friendly</h3>
-<p>Designed to work on phones, tablets and computers.</p>
-</div>
-
-</div>
-</section>
-
-
-<section class="section" id="dashboard">
-
-<h2>User Dashboard</h2>
-
-<div class="dashboard">
-
-<div class="stat">
-<span>Available Balance</span>
-<strong>৳0.00</strong>
-</div>
-
-<div class="stat">
-<span>Total Investment</span>
-<strong>৳0.00</strong>
-</div>
-
-<div class="stat">
-<span>Portfolio Value</span>
-<strong>৳0.00</strong>
-</div>
-
-<div class="stat">
-<span>Transactions</span>
-<strong>0</strong>
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<section class="section" id="login">
+<!-- CATEGORY -->
 
-<h2>Login</h2>
+<div class="categories">
 
-<div class="login-box">
-
-<input type="email" placeholder="Email Address">
-
-<input type="password" placeholder="Password">
-
-<button onclick="loginDemo()">Login</button>
-
-<p id="message" style="margin-top:15px;color:#d4a936;text-align:center;"></p>
+  <div class="category active">🔥 Popular</div>
+  <div class="category">🎰 Slots</div>
+  <div class="category">♠ Casino</div>
+  <div class="category">🎥 Live Casino</div>
+  <div class="category">🎯 Arcade</div>
+  <div class="category">🆕 New Games</div>
 
 </div>
+
+
+<!-- PROMOTION -->
+
+<section class="section" id="promotions">
+
+  <div class="promo">
+
+    <h2>CA BET ENTERTAINMENT</h2>
+
+    <p>
+      Discover featured games and explore the CA BET
+      entertainment experience.
+    </p>
+
+  </div>
 
 </section>
 
 
-<section class="section">
+<!-- POPULAR -->
 
-<h2>Important Information</h2>
+<section class="section" id="casino">
 
-<div class="notice">
+  <div class="section-title">
 
-CA BET investment activities may involve financial risk.
-Investment returns are not guaranteed. Users should review
-all applicable terms, risks, fees and regulatory information
-before making any investment decision.
+    <h2>🔥 Popular Games</h2>
 
-</div>
+    <a href="#">View All</a>
+
+  </div>
+
+
+  <div class="games">
+
+    <div class="game">
+
+      <div class="game-img">🎰</div>
+
+      <div class="game-info">
+
+        <h3>Royal Slots</h3>
+
+        <p>Classic slot experience</p>
+
+        <button class="play" onclick="demoGame('Royal Slots')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">💎</div>
+
+      <div class="game-info">
+
+        <h3>Diamond Spin</h3>
+
+        <p>Premium slot theme</p>
+
+        <button class="play" onclick="demoGame('Diamond Spin')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🃏</div>
+
+      <div class="game-info">
+
+        <h3>Classic Cards</h3>
+
+        <p>Card entertainment</p>
+
+        <button class="play" onclick="demoGame('Classic Cards')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">👑</div>
+
+      <div class="game-info">
+
+        <h3>Golden Palace</h3>
+
+        <p>Luxury casino theme</p>
+
+        <button class="play" onclick="demoGame('Golden Palace')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🍀</div>
+
+      <div class="game-info">
+
+        <h3>Lucky Clover</h3>
+
+        <p>Fun arcade experience</p>
+
+        <button class="play" onclick="demoGame('Lucky Clover')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🔥</div>
+
+      <div class="game-info">
+
+        <h3>Fire Spin</h3>
+
+        <p>Fast-paced demo game</p>
+
+        <button class="play" onclick="demoGame('Fire Spin')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
+
+<!-- LIVE -->
+
+<section class="section" id="live">
+
+  <div class="section-title">
+
+    <h2>🎥 Live Entertainment</h2>
+
+    <a href="#">View All</a>
+
+  </div>
+
+
+  <div class="games">
+
+    <div class="game">
+
+      <div class="game-img">🎥</div>
+
+      <div class="game-info">
+
+        <h3>Live Table</h3>
+
+        <p>Live-style interface</p>
+
+        <button class="play" onclick="demoGame('Live Table')">
+          VIEW DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">♠️</div>
+
+      <div class="game-info">
+
+        <h3>Card Room</h3>
+
+        <p>Casino card interface</p>
+
+        <button class="play" onclick="demoGame('Card Room')">
+          VIEW DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🎲</div>
+
+      <div class="game-info">
+
+        <h3>Dice Room</h3>
+
+        <p>Entertainment demo</p>
+
+        <button class="play" onclick="demoGame('Dice Room')">
+          VIEW DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SLOTS -->
+
+<section class="section" id="slots">
+
+  <div class="section-title">
+
+    <h2>🎰 Featured Slots</h2>
+
+    <a href="#">View All</a>
+
+  </div>
+
+
+  <div class="games">
+
+    <div class="game">
+
+      <div class="game-img">🌟</div>
+
+      <div class="game-info">
+
+        <h3>Star Fortune</h3>
+
+        <p>Slot demo</p>
+
+        <button class="play" onclick="demoGame('Star Fortune')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">💰</div>
+
+      <div class="game-info">
+
+        <h3>Golden Fortune</h3>
+
+        <p>Slot demo</p>
+
+        <button class="play" onclick="demoGame('Golden Fortune')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🐯</div>
+
+      <div class="game-info">
+
+        <h3>Tiger Spin</h3>
+
+        <p>Slot demo</p>
+
+        <button class="play" onclick="demoGame('Tiger Spin')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="game">
+
+      <div class="game-img">🚀</div>
+
+      <div class="game-info">
+
+        <h3>Rocket Spin</h3>
+
+        <p>Arcade demo</p>
+
+        <button class="play" onclick="demoGame('Rocket Spin')">
+          PLAY DEMO
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LOGIN / REGISTER MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <h2 id="modalTitle">Login</h2>
+
+    <input
+      type="text"
+      id="nameInput"
+      placeholder="Full Name"
+      style="display:none;"
+    >
+
+    <input
+      type="email"
+      placeholder="Email Address"
+    >
+
+    <input
+      type="password"
+      placeholder="Password"
+    >
+
+    <button onclick="submitForm()">Continue</button>
+
+    <p
+      id="modalMessage"
+      style="margin-top:15px;text-align:center;color:#19d3c5;font-size:13px;">
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-CA BET © 2026 — All Rights Reserved
+  <div class="footer-grid">
+
+    <div>
+
+      <h3>CA BET</h3>
+
+      <p>
+        A modern casino-style entertainment interface.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Navigation</h3>
+
+      <p><a href="#home">Home</a></p>
+      <p><a href="#casino">Casino</a></p>
+      <p><a href="#live">Live</a></p>
+      <p><a href="#slots">Slots</a></p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Support</h3>
+
+      <p>Help Center</p>
+      <p>Contact</p>
+      <p>FAQ</p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Legal</h3>
+
+      <p>Terms & Conditions</p>
+      <p>Privacy Policy</p>
+      <p>Responsible Gaming</p>
+
+    </div>
+
+  </div>
+
+
+  <div class="disclaimer">
+
+    This website is a non-functional entertainment interface.
+    It does not process real-money wagers, deposits or withdrawals.
+    Game buttons are demonstration only.
+
+  </div>
 
 </footer>
 
 
 <script>
 
-function loginDemo(){
+function openModal(type){
 
-  document.getElementById("message").innerText =
-  "Demo login interface. Connect a secure backend to enable real accounts.";
+  document.getElementById("modal").style.display="flex";
+
+  if(type==="register"){
+
+    document.getElementById("modalTitle").innerText="Create Account";
+
+    document.getElementById("nameInput").style.display="block";
+
+  }else{
+
+    document.getElementById("modalTitle").innerText="Login";
+
+    document.getElementById("nameInput").style.display="none";
+
+  }
+
+  document.getElementById("modalMessage").innerText="";
+
+}
+
+
+function closeModal(){
+
+  document.getElementById("modal").style.display="none";
+
+}
+
+
+function submitForm(){
+
+  document.getElementById("modalMessage").innerText=
+  "Demo interface only — account functionality is not connected.";
+
+}
+
+
+function demoGame(name){
+
+  alert(
+    name +
+    "\n\nThis is a demo game interface. Real-money betting is not enabled."
+  );
+
+}
+
+
+function scrollToGames(){
+
+  document.getElementById("casino")
+  .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+window.onclick=function(event){
+
+  const modal=document.getElementById("modal");
+
+  if(event.target===modal){
+
+    closeModal();
+
+  }
 
 }
 
