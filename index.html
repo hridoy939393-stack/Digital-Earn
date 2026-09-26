@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA Bet - Investment Platform</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#080b12;
+  color:#fff;
+}
+
+header{
+  background:#0e131d;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #242b38;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#e0b84c;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  margin-left:20px;
+}
+
+nav a:hover{
+  color:#e0b84c;
+}
+
+.hero{
+  text-align:center;
+  padding:90px 20px;
+  background:
+  radial-gradient(circle at center,#25200d 0,#080b12 55%);
+}
+
+.hero h1{
+  font-size:48px;
+  color:#e0b84c;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:18px;
+  max-width:650px;
+  margin:auto;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:13px 25px;
+  background:#d4a936;
+  color:#111;
+  border:none;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.section{
+  padding:60px 6%;
+}
+
+.section h2{
+  text-align:center;
+  color:#e0b84c;
+  margin-bottom:35px;
+  font-size:32px;
+}
+
+.plans{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#111722;
+  border:1px solid #272f3c;
+  border-radius:12px;
+  padding:25px;
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#d4a936;
+}
+
+.card h3{
+  color:#e0b84c;
+  margin-bottom:15px;
+}
+
+.amount{
+  font-size:25px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.card button{
+  background:#d4a936;
+  border:0;
+  padding:11px 20px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.feature{
+  background:#111722;
+  padding:25px;
+  border-radius:10px;
+  border:1px solid #272f3c;
+}
+
+.feature h3{
+  color:#e0b84c;
+  margin-bottom:10px;
+}
+
+.login-box{
+  max-width:450px;
+  margin:auto;
+  background:#111722;
+  padding:30px;
+  border-radius:12px;
+}
+
+.login-box input{
+  width:100%;
+  padding:13px;
+  margin:8px 0;
+  background:#080b12;
+  color:white;
+  border:1px solid #303846;
+  border-radius:6px;
+}
+
+.login-box button{
+  width:100%;
+  padding:13px;
+  margin-top:12px;
+  background:#d4a936;
+  border:0;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:#111722;
+  border:1px solid #272f3c;
+  padding:25px;
+  border-radius:10px;
+}
+
+.stat span{
+  color:#aaa;
+  display:block;
+  margin-bottom:10px;
+}
+
+.stat strong{
+  font-size:25px;
+  color:#e0b84c;
+}
+
+.notice{
+  background:#17130a;
+  border:1px solid #705b22;
+  padding:20px;
+  border-radius:8px;
+  color:#ddd;
+  line-height:1.6;
+}
+
+footer{
+  background:#0e131d;
+  text-align:center;
+  padding:30px;
+  color:#888;
+  margin-top:40px;
+}
+
+@media(max-width:700px){
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .section{
+    padding:45px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CA BET</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#plans">Plans</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#login">Login</a>
+  </nav>
+</header>
+
+
+<section class="hero" id="home">
+
+  <h1>CA BET</h1>
+
+  <p>
+    A modern investment platform interface designed for
+    portfolio management and investment information.
+  </p>
+
+  <a href="#plans" class="btn">View Plans</a>
+
+</section>
+
+
+<section class="section" id="plans">
+
+<h2>Investment Plans</h2>
+
+<div class="plans">
+
+<div class="card"><h3>Starter</h3><div class="amount">৳300</div><button>Select</button></div>
+
+<div class="card"><h3>Basic</h3><div class="amount">৳500</div><button>Select</button></div>
+
+<div class="card"><h3>Bronze</h3><div class="amount">৳1,000</div><button>Select</button></div>
+
+<div class="card"><h3>Silver</h3><div class="amount">৳1,500</div><button>Select</button></div>
+
+<div class="card"><h3>Plus</h3><div class="amount">৳2,000</div><button>Select</button></div>
+
+<div class="card"><h3>Growth</h3><div class="amount">৳3,000</div><button>Select</button></div>
+
+<div class="card"><h3>Smart</h3><div class="amount">৳4,000</div><button>Select</button></div>
+
+<div class="card"><h3>Pro</h3><div class="amount">৳5,000</div><button>Select</button></div>
+
+<div class="card"><h3>Advanced</h3><div class="amount">৳6,500</div><button>Select</button></div>
+
+<div class="card"><h3>Premium</h3><div class="amount">৳8,000</div><button>Select</button></div>
+
+<div class="card"><h3>Elite</h3><div class="amount">৳10,000</div><button>Select</button></div>
+
+<div class="card"><h3>Gold</h3><div class="amount">৳12,500</div><button>Select</button></div>
+
+<div class="card"><h3>Platinum</h3><div class="amount">৳15,000</div><button>Select</button></div>
+
+<div class="card"><h3>Business</h3><div class="amount">৳17,500</div><button>Select</button></div>
+
+<div class="card"><h3>Professional</h3><div class="amount">৳20,000</div><button>Select</button></div>
+
+<div class="card"><h3>Executive</h3><div class="amount">৳22,500</div><button>Select</button></div>
+
+<div class="card"><h3>Diamond</h3><div class="amount">৳25,000</div><button>Select</button></div>
+
+<div class="card"><h3>VIP</h3><div class="amount">৳27,000</div><button>Select</button></div>
+
+<div class="card"><h3>Royal</h3><div class="amount">৳28,500</div><button>Select</button></div>
+
+<div class="card"><h3>Ultimate</h3><div class="amount">৳30,000</div><button>Select</button></div>
+
+</div>
+</section>
+
+
+<section class="section">
+
+<h2>Why CA BET?</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Secure Account</h3>
+<p>User account security and authentication.</p>
+</div>
+
+<div class="feature">
+<h3>Portfolio</h3>
+<p>View your investment information in one place.</p>
+</div>
+
+<div class="feature">
+<h3>Transaction History</h3>
+<p>Keep track of account transactions.</p>
+</div>
+
+<div class="feature">
+<h3>Mobile Friendly</h3>
+<p>Designed to work on phones, tablets and computers.</p>
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="dashboard">
+
+<h2>User Dashboard</h2>
+
+<div class="dashboard">
+
+<div class="stat">
+<span>Available Balance</span>
+<strong>৳0.00</strong>
+</div>
+
+<div class="stat">
+<span>Total Investment</span>
+<strong>৳0.00</strong>
+</div>
+
+<div class="stat">
+<span>Portfolio Value</span>
+<strong>৳0.00</strong>
+</div>
+
+<div class="stat">
+<span>Transactions</span>
+<strong>0</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="login">
+
+<h2>Login</h2>
+
+<div class="login-box">
+
+<input type="email" placeholder="Email Address">
+
+<input type="password" placeholder="Password">
+
+<button onclick="loginDemo()">Login</button>
+
+<p id="message" style="margin-top:15px;color:#d4a936;text-align:center;"></p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Important Information</h2>
+
+<div class="notice">
+
+CA BET investment activities may involve financial risk.
+Investment returns are not guaranteed. Users should review
+all applicable terms, risks, fees and regulatory information
+before making any investment decision.
+
+</div>
+
+</section>
+
+
+<footer>
+
+CA BET © 2026 — All Rights Reserved
+
+</footer>
+
+
+<script>
+
+function loginDemo(){
+
+  document.getElementById("message").innerText =
+  "Demo login interface. Connect a secure backend to enable real accounts.";
+
+}
+
+</script>
+
+</body>
+</html>
